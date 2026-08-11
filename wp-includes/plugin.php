@@ -1011,7 +1011,7 @@ function _wp_filter_build_unique_id( $hook_name, $callback, $priority ) {
 
 	if ( is_object( $callback[0] ) ) {
 		// Object class calling.
-		return spl_object_hash( $callback[0] ) . $callback[1];
+		return spl_object_id( $callback[0] ) . $callback[1];
 	} elseif ( is_string( $callback[0] ) ) {
 		// Static calling.
 		return $callback[0] . '::' . $callback[1];
